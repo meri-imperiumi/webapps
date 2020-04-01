@@ -4,8 +4,8 @@ import Qty from 'js-quantities';
 import styles from './DashboardValue.module.css';
 
 function DashboardValue(props) {
-  const { label, desiredUnit } = props;
-  let { value } = props;
+  const { label } = props;
+  let { value, desiredUnit } = props;
   if (typeof value === 'number') {
     if (props.unit && desiredUnit) {
       const qty = Qty(props.value, props.unit);
@@ -16,6 +16,10 @@ function DashboardValue(props) {
     }
   } else {
     value = 'n/a';
+  }
+
+  if (desiredUnit === 'temp-C') {
+    desiredUnit = '°C';
   }
 
   return (

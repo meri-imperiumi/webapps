@@ -16,7 +16,7 @@ const unitOptions = [
   },
   {
     label: 'Temp',
-    unit: 'kelvin',
+    unit: 'temp-K',
     desiredUnit: 'temp-C',
   },
   {
