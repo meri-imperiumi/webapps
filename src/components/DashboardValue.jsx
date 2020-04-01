@@ -4,13 +4,14 @@ import Qty from 'js-quantities';
 import styles from './DashboardValue.module.css';
 
 function DashboardValue(props) {
-  let value = props.value;
-  if (typeof props.value === 'number') {
-    if (props.unit && props.desiredUnit) {
-      const qty = Qty(props.value, props.unit)
+  const { label, desiredUnit } = props;
+  let { value } = props;
+  if (typeof value === 'number') {
+    if (props.unit && desiredUnit) {
+      const qty = Qty(props.value, props.unit);
       value = qty
         .to(props.desiredUnit)
-        .toPrec(`0.1 ${props.desiredUnit}`)
+        .toPrec(`0.1 ${desiredUnit}`)
         .scalar;
     }
   } else {
@@ -19,18 +20,21 @@ function DashboardValue(props) {
 
   return (
     <div className={styles.card}>
-      <h1 className={styles.label}>{props.label}</h1>
+      <h1 className={styles.label}>{label}</h1>
       <p className={styles.value}>{value}</p>
-      <h2 className={styles.unit}>{props.desiredUnit}</h2>
+      <h2 className={styles.unit}>{desiredUnit}</h2>
     </div>
   );
-};
+}
 
+DashboardValue.defaultProps = {
+  value: null,
+};
 DashboardValue.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.number,
-  unit: PropTypes.string,
-  desiredUnit: PropTypes.string,
+  unit: PropTypes.string.isRequired,
+  desiredUnit: PropTypes.string.isRequired,
 };
 
 export default DashboardValue;
