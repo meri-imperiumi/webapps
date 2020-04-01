@@ -1,5 +1,5 @@
 import React from 'react';
-import DashboardValue from './DashboardValue'
+import DashboardValue from './DashboardValue';
 
 export default {
   title: 'Dashboard value',

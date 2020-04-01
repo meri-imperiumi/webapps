@@ -4,6 +4,7 @@
   "description": "Webapps for Signal K",
   "main": "index.js",
   "scripts": {
+    "pretest": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -21,6 +22,12 @@
     "@storybook/addons": "^5.3.18",
     "@storybook/react": "^5.3.18",
     "babel-loader": "^8.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
     "react-scripts": "^3.4.1"
   },
   "dependencies": {
