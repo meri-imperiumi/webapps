@@ -1,0 +1,26 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 10em;
+  border: 1px solid red;
+}
+
+.label {
+  composes: display from "../shared/typography.css";
+  font-size: 24pt;
+  margin: 0;
+  padding: 0;
+}
+.value {
+  composes: body from "../shared/typography.css";
+  font-size: 48pt;
+  margin: 0;
+  padding: 0;
+}
+.unit {
+  composes: display from "../shared/typography.css";
+  margin: 0;
+  padding: 0;
+}

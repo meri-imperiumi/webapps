@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'nasalization';
+  src: url('../../assets/nasalization-rg.woff') format('woff');
+}
+@font-face {
+  font-family: 'eurostile';
+  src: url('../../assets/Eurostile.woff') format('woff');
+}
+
+.display {
+  font-family: 'nasalization', helvetica, arial, sans-serif;
+}
+
+.body {
+  font-family: 'eurostile', helvetica, arial, sans-serif;
+}
