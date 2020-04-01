@@ -12,12 +12,14 @@
   font-size: 24pt;
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
 }
 .value {
   composes: body from "../shared/typography.css";
   font-size: 48pt;
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
 }
 .unit {
   composes: display from "../shared/typography.css";
