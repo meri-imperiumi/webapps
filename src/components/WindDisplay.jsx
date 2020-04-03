@@ -15,30 +15,31 @@ const compassPoints = [
 function WindDisplay(props) {
   const radius = 300;
   const { bearing } = props;
-  let currentOffset = (((bearing) / 3.6) * -1) + 0.5;
+  const rotation = 90 + bearing;
+  let currentOffset = 0;
   return (
     <svg width={radius * 2 + 20} height={radius * 2 + 20}>
       <circle
         id="compassCircle"
-        cx={-1 * radius - 10}
-        cy={radius + 10}
+        cx={radius + 10}
+        cy={radius + 14}
         r={radius}
         stroke="black"
         strokeWidth={4}
         fill="#044B94"
         fillOpacity={0.2}
-        transform="rotate(-90)"
+        transform={`rotate(-${rotation} ${radius + 10} ${radius + 14})`}
       />
       <path
         d="
-          M 310 60
+          M 310 75
           C 410,350
             420,350
             360,500
           L 260 500
           C 210,350
             190,400
-            310,60
+            310,75
         "
         stroke="white"
         fill="white"
@@ -46,15 +47,7 @@ function WindDisplay(props) {
       />
       {
         compassPoints.map((point) => {
-          let calcOffset = currentOffset;
-          if (currentOffset < 0) {
-            calcOffset += 100;
-          }
-          if (calcOffset > 100) {
-            calcOffset -= 100;
-          }
-          // FIXME: The text in point 0% gets clipped. Draw outside?
-          const offset = `${Math.floor(calcOffset)}%`;
+          const offset = `${Math.floor(currentOffset)}%`;
           currentOffset += 12.5;
           return (
             <text
