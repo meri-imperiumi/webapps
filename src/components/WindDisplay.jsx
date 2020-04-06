@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './WindDisplay.module.css';
 
 const compassPoints = [
   'N',
@@ -51,12 +52,16 @@ function WindDisplay(props) {
           currentOffset += 12.5;
           return (
             <text
+              key={point}
               x={0}
               y={15}
               stroke="black"
               textAnchor="middle"
             >
-              <textPath xlinkHref="#compassCircle" startOffset={offset}>
+              <textPath
+                xlinkHref="#compassCircle"
+                startOffset={offset}
+                className={styles.compassPoint}>
                 {point}
               </textPath>
             </text>

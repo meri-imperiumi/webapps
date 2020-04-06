@@ -1,0 +1,3 @@
+.compassPoint {
+  composes: display from "../shared/typography.css";
+}
