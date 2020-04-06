@@ -15,9 +15,17 @@ const compassPoints = [
 
 function WindDisplay(props) {
   const radius = 300;
-  const { bearing } = props;
+  const { bearing, apparentWind } = props;
   const rotation = 90 + bearing;
   let currentOffset = 0;
+  const beatAngle = 45;
+  const getCoordinatesForDegrees = (degrees) => {
+    const angle = 2 * Math.PI * (degrees / 360);
+    const x = (radius + 10) + (Math.cos(angle) * radius);
+    const y = (radius + 14) + (Math.sin(angle) * radius);
+    return [x, y];
+  };
+  const windRotation = -90 - beatAngle + apparentWind;
   return (
     <svg width={radius * 2 + 20} height={radius * 2 + 20}>
       <circle
@@ -30,6 +38,19 @@ function WindDisplay(props) {
         fill="#044B94"
         fillOpacity={0.2}
         transform={`rotate(-${rotation} ${radius + 10} ${radius + 14})`}
+      />
+      <path
+        d={`
+          M ${radius + 10} ${radius + 14}
+          L ${radius + 10 + radius} ${radius + 14}
+          A ${radius} ${radius} 0 0 1 ${getCoordinatesForDegrees(beatAngle * 2)[0]} ${getCoordinatesForDegrees(beatAngle * 2)[1]}
+          Z
+        `}
+        stroke="red"
+        strokeWidth={0}
+        fill="red"
+        fillOpacity={0.6}
+        transform={`rotate(${windRotation} ${radius + 10} ${radius + 14})`}
       />
       <path
         d="
@@ -61,7 +82,8 @@ function WindDisplay(props) {
               <textPath
                 xlinkHref="#compassCircle"
                 startOffset={offset}
-                className={styles.compassPoint}>
+                className={styles.compassPoint}
+              >
                 {point}
               </textPath>
             </text>

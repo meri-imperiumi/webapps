@@ -11,5 +11,6 @@ export default {
 export const WithoutValues = () => (
   <WindDisplay
     bearing={number('Bearing', 45)}
+    apparentWind={number('Apparent wind angle', 70)}
   />
 );
