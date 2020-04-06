@@ -18,7 +18,7 @@ function WindDisplay(props) {
   const { bearing, apparentWind } = props;
   const rotation = 90 + bearing;
   let currentOffset = 0;
-  const beatAngle = 45;
+  const beatAngle = 42;
   const getCoordinatesForDegrees = (degrees) => {
     const angle = 2 * Math.PI * (degrees / 360);
     const x = (radius + 10) + (Math.cos(angle) * radius);
@@ -65,7 +65,6 @@ function WindDisplay(props) {
         "
         stroke="white"
         fill="white"
-        fillOpacity={0.8}
       />
       {
         compassPoints.map((point) => {
@@ -96,6 +95,7 @@ function WindDisplay(props) {
 
 WindDisplay.propTypes = {
   bearing: PropTypes.number.isRequired,
+  apparentWind: PropTypes.number.isRequired,
 };
 
 export default WindDisplay;
