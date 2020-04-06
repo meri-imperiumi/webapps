@@ -14,6 +14,7 @@ function WindDisplayAreas(props) {
     const y = (radius + 14) + (Math.sin(angle) * radius);
     return [x, y];
   };
+  const windRotation = -90 - 1 + apparentWind;
   const beatRotation = -90 - beatAngle + apparentWind;
   const gybeRotation = -90 - gybeAngle + apparentWind + 180;
   return (
@@ -43,6 +44,19 @@ function WindDisplayAreas(props) {
         fill="red"
         fillOpacity={0.2}
         transform={`rotate(${gybeRotation} ${radius + 10} ${radius + 14})`}
+      />
+      <path
+        d={`
+          M ${radius + 10} ${radius + 14}
+          L ${radius + 10 + radius} ${radius + 14}
+          A ${radius} ${radius} 0 0 1 ${getCoordinatesForDegrees(1 * 2)[0]} ${getCoordinatesForDegrees(1 * 2)[1]}
+          Z
+        `}
+        stroke="red"
+        strokeWidth={0}
+        fill="red"
+        fillOpacity={0.4}
+        transform={`rotate(${windRotation} ${radius + 10} ${radius + 14})`}
       />
     </g>
   );
