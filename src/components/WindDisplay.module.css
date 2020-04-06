@@ -1,3 +1,14 @@
+.container {
+  position: relative;
+  display: inline-block;
+}
+.windSpeed {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: smaller;
+}
 .compassPoint {
   composes: display from "../shared/typography.css";
 }

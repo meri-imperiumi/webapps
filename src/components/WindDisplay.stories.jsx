@@ -20,3 +20,11 @@ export const WithApparentWind = () => (
     apparentWind={number('Apparent wind angle', 70)}
   />
 );
+
+export const WithApparentWindAndSpeed = () => (
+  <WindDisplay
+    bearing={number('Bearing', 45)}
+    apparentWind={number('Apparent wind angle', 70)}
+    windSpeed={number('Wind speed', 7)}
+  />
+);
