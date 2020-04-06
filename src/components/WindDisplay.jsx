@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import WindDisplayAreas from './WindDisplayAreas';
 import styles from './WindDisplay.module.css';
 
 const compassPoints = [
@@ -18,17 +19,15 @@ function WindDisplay(props) {
   const { bearing, apparentWind } = props;
   const rotation = 90 + bearing;
   let currentOffset = 0;
-  // Note: these should be read from polars
-  const beatAngle = 42;
-  const gybeAngle = 27;
-  const getCoordinatesForDegrees = (degrees) => {
-    const angle = 2 * Math.PI * (degrees / 360);
-    const x = (radius + 10) + (Math.cos(angle) * radius);
-    const y = (radius + 14) + (Math.sin(angle) * radius);
-    return [x, y];
-  };
-  const beatRotation = -90 - beatAngle + apparentWind;
-  const gybeRotation = -90 - gybeAngle + apparentWind + 180;
+  let windAreas = null;
+  if (typeof apparentWind === 'number') {
+    windAreas = (
+      <WindDisplayAreas
+        apparentWind={apparentWind}
+        radius={radius}
+      />
+    );
+  }
   return (
     <svg width={radius * 2 + 20} height={radius * 2 + 20}>
       <circle
@@ -42,32 +41,7 @@ function WindDisplay(props) {
         fillOpacity={0.2}
         transform={`rotate(-${rotation} ${radius + 10} ${radius + 14})`}
       />
-      <path
-        d={`
-          M ${radius + 10} ${radius + 14}
-          L ${radius + 10 + radius} ${radius + 14}
-          A ${radius} ${radius} 0 0 1 ${getCoordinatesForDegrees(beatAngle * 2)[0]} ${getCoordinatesForDegrees(beatAngle * 2)[1]}
-          Z
-        `}
-        stroke="red"
-        strokeWidth={0}
-        fill="red"
-        fillOpacity={0.4}
-        transform={`rotate(${beatRotation} ${radius + 10} ${radius + 14})`}
-      />
-      <path
-        d={`
-          M ${radius + 10} ${radius + 14}
-          L ${radius + 10 + radius} ${radius + 14}
-          A ${radius} ${radius} 0 0 1 ${getCoordinatesForDegrees(gybeAngle * 2)[0]} ${getCoordinatesForDegrees(gybeAngle * 2)[1]}
-          Z
-        `}
-        stroke="red"
-        strokeWidth={0}
-        fill="red"
-        fillOpacity={0.2}
-        transform={`rotate(${gybeRotation} ${radius + 10} ${radius + 14})`}
-      />
+      {windAreas}
       <path
         d="
           M 310 75
@@ -109,9 +83,13 @@ function WindDisplay(props) {
   );
 }
 
+WindDisplay.defaultProps = {
+  apparentWind: null,
+};
+
 WindDisplay.propTypes = {
   bearing: PropTypes.number.isRequired,
-  apparentWind: PropTypes.number.isRequired,
+  apparentWind: PropTypes.number,
 };
 
 export default WindDisplay;
