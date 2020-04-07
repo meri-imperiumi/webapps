@@ -44,8 +44,8 @@ function WindDisplay(props) {
     waypoint = (
       <polyline
         points={`${radius + radius + 10 + 10}, ${radius + 10} ${radius + radius + 14}, ${radius} ${radius + 14 + radius}, ${radius + 21}`}
-        fill="black"
-        stroke="black"
+        fill="#FF4F00"
+        stroke="#FF4F00"
         transform={`rotate(${waypointRotation} ${radius + 10} ${radius + 14})`}
       />
     );
