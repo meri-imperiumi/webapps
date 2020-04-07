@@ -20,9 +20,13 @@ function WindDisplay(props) {
   const {
     bearing,
     apparentWind,
+    nextWaypoint,
     windSpeed,
+    beatAngle,
+    gybeAngle,
   } = props;
   const rotation = 90 + bearing;
+  const waypointRotation = -90 + nextWaypoint - bearing;
   let currentOffset = 0;
   let windAreas = null;
   if (typeof apparentWind === 'number') {
@@ -30,6 +34,19 @@ function WindDisplay(props) {
       <WindDisplayAreas
         apparentWind={apparentWind}
         radius={radius}
+        beatAngle={beatAngle}
+        gybeAngle={gybeAngle}
+      />
+    );
+  }
+  let waypoint = null;
+  if (typeof nextWaypoint === 'number') {
+    waypoint = (
+      <polyline
+        points={`${radius + radius + 10 + 10}, ${radius + 10} ${radius + radius + 14}, ${radius} ${radius + 14 + radius}, ${radius + 21}`}
+        fill="black"
+        stroke="black"
+        transform={`rotate(${waypointRotation} ${radius + 10} ${radius + 14})`}
       />
     );
   }
@@ -85,6 +102,7 @@ function WindDisplay(props) {
             );
           })
         }
+        {waypoint}
         <rect
           width={80}
           height={30}
@@ -119,13 +137,19 @@ function WindDisplay(props) {
 
 WindDisplay.defaultProps = {
   apparentWind: null,
+  nextWaypoint: 270,
   windSpeed: null,
+  beatAngle: 42,
+  gybeAngle: 27,
 };
 
 WindDisplay.propTypes = {
   bearing: PropTypes.number.isRequired,
   apparentWind: PropTypes.number,
+  nextWaypoint: PropTypes.number,
   windSpeed: PropTypes.number,
+  beatAngle: PropTypes.number,
+  gybeAngle: PropTypes.number,
 };
 
 export default WindDisplay;
