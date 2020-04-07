@@ -1,0 +1,100 @@
+body {
+  --dashboard-background: #ffffff;
+  --dashboard-text: #000000;
+  --dashboard-outline: #121212;
+}
+
+body.dark {
+  --dashboard-background: #000000;
+  --dashboard-text: #ffffff;
+  --dashboard-outline: #e0e0e0;
+}
+
+.colors_container__2jP9v {
+  color: var(--dashboard-text);
+}
+
+.colors_text__2Gm2_ {
+  color: var(--dashboard-text);
+  stroke: var(--dashboard-text);
+  fill: var(--dashboard-text);
+}
+
+.colors_svgElement__2JoRh {
+  stroke: var(--dashboard-outline);
+}
+.colors_filledSvgElement__3M8Yz {
+  stroke: var(--dashboard-outline);
+  fill: var(--dashboard-background);
+}
+
+@font-face {
+  font-family: 'nasalization';
+  src: url(static/media/nasalization-rg.db842f76.woff) format('woff');
+}
+@font-face {
+  font-family: 'eurostile';
+  src: url(static/media/Eurostile.6864287b.woff) format('woff');
+}
+
+.typography_display__2Ats9 {
+  font-family: 'nasalization', helvetica, arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.typography_body__1uOdS {
+  font-family: 'eurostile', helvetica, arial, sans-serif;
+}
+
+.DashboardValue_card__1mn9c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  min-width: 10em;
+  max-width: 50vw;
+  display: inline-block;
+  padding: 7px;
+}
+
+.DashboardValue_label__1896J {
+  font-size: 24pt;
+  margin: 0;
+  padding: 0;
+}
+.DashboardValue_value__13yav {
+  font-size: 48pt;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+.DashboardValue_unit__26iMj {
+  margin: 0;
+  padding: 0;
+}
+
+.WindDisplay_container__2v8Gq {
+  position: relative;
+  display: inline-block;
+}
+.WindDisplay_windSpeed__1jPKk {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: smaller;
+}
+.WindDisplay_vessel__1ijeQ {
+}
+.WindDisplay_compassCircle__16Fzl {
+}
+.WindDisplay_compassPoint__1QX8S {
+}
+.WindDisplay_currentBearingContainer__2skBv {
+}
+.WindDisplay_currentBearing__2ixLy {
+  font-size: 28px;
+}
+
+
+/*# sourceMappingURL=main.df20520a.chunk.css.map*/

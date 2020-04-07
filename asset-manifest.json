@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.df20520a.chunk.css",
+    "main.js": "/main.a902cd92821104cf46b1.bundle.js",
+    "main.css.map": "/static/css/main.df20520a.chunk.css.map",
+    "main.js.map": "/main.a902cd92821104cf46b1.bundle.js.map",
+    "runtime~main.js": "/runtime~main.a902cd92821104cf46b1.bundle.js",
+    "runtime~main.js.map": "/runtime~main.a902cd92821104cf46b1.bundle.js.map",
+    "vendors~main.js": "/vendors~main.a902cd92821104cf46b1.bundle.js",
+    "vendors~main.js.map": "/vendors~main.a902cd92821104cf46b1.bundle.js.map",
+    "iframe.html": "/iframe.html",
+    "precache-manifest.a0dbb611b2771ea611d4658570fe77f7.js": "/precache-manifest.a0dbb611b2771ea611d4658570fe77f7.js",
+    "service-worker.js": "/service-worker.js",
+    "static/media/DashboardValue.module.css": "/static/media/nasalization-rg.db842f76.woff",
+    "vendors~main.a902cd92821104cf46b1.bundle.js.LICENSE.txt": "/vendors~main.a902cd92821104cf46b1.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.a902cd92821104cf46b1.bundle.js",
+    "vendors~main.a902cd92821104cf46b1.bundle.js",
+    "static/css/main.df20520a.chunk.css",
+    "main.a902cd92821104cf46b1.bundle.js"
+  ]
+}
