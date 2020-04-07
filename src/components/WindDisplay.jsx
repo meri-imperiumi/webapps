@@ -137,7 +137,7 @@ function WindDisplay(props) {
 
 WindDisplay.defaultProps = {
   apparentWind: null,
-  nextWaypoint: 270,
+  nextWaypoint: null,
   windSpeed: null,
   beatAngle: 42,
   gybeAngle: 27,
