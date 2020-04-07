@@ -110,6 +110,7 @@ function WindDisplay(props) {
           height={30}
           x={radius + 10 - 40}
           y={14}
+          rx={2}
           fill="white"
           stroke="black"
           strokeWidth={4}
