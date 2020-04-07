@@ -2,3 +2,14 @@ language: node_js
 version: 1.0
 node_js:
 - lts/*
+after_success:
+- npm run build-storybook
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: storybook-static
+  github_token: $GITHUB_TOKEN
+  committer_from_gh: true
+  keep_history: true
+  on:
+    branch: master
