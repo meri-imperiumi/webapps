@@ -1,11 +1,13 @@
 :global body {
   --dashboard-background: #ffffff;
   --dashboard-text: #000000;
+  --dashboard-outline: #121212;
 }
 
 :global body.dark {
   --dashboard-background: #000000;
   --dashboard-text: #ffffff;
+  --dashboard-outline: #e0e0e0;
 }
 
 .container {
@@ -19,9 +21,9 @@
 }
 
 .svgElement {
-  stroke: var(--dashboard-text);
+  stroke: var(--dashboard-outline);
 }
 .filledSvgElement {
-  stroke: var(--dashboard-text);
+  stroke: var(--dashboard-outline);
   fill: var(--dashboard-background);
 }
