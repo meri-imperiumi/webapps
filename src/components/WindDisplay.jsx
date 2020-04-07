@@ -107,14 +107,14 @@ function WindDisplay(props) {
           width={80}
           height={30}
           x={radius + 10 - 40}
-          y={10}
+          y={14}
           fill="white"
           stroke="black"
           strokeWidth={4}
         />
         <text
           x={radius + 10}
-          y={34}
+          y={38}
           stroke="black"
           textAnchor="middle"
           className={styles.currentBearing}
