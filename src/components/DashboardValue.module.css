@@ -1,4 +1,5 @@
 .card {
+  composes: container from "../shared/colors.css";
   display: flex;
   flex-direction: column;
   justify-content: center;

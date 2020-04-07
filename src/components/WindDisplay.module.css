@@ -1,6 +1,7 @@
 .container {
   position: relative;
   display: inline-block;
+  composes: container from "../shared/colors.css";
 }
 .windSpeed {
   position: absolute;
@@ -9,10 +10,21 @@
   transform: translate(-50%, -50%);
   font-size: smaller;
 }
+.vessel {
+  composes: filledSvgElement from "../shared/colors.css";
+}
+.compassCircle {
+  composes: svgElement from "../shared/colors.css";
+}
 .compassPoint {
   composes: display from "../shared/typography.css";
+  composes: text from "../shared/colors.css";
+}
+.currentBearingContainer {
+  composes: filledSvgElement from "../shared/colors.css";
 }
 .currentBearing {
   composes: body from "../shared/typography.css";
+  composes: text from "../shared/colors.css";
   font-size: 28px;
 }

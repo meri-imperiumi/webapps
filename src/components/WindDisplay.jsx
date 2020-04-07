@@ -63,6 +63,7 @@ function WindDisplay(props) {
           fill="#044B94"
           fillOpacity={0.2}
           transform={`rotate(-${rotation} ${radius + 10} ${radius + 14})`}
+          className={styles.compassCircle}
         />
         {windAreas}
         <path
@@ -78,6 +79,7 @@ function WindDisplay(props) {
           "
           stroke="white"
           fill="white"
+          className={styles.vessel}
         />
         {
           compassPoints.map((point) => {
@@ -111,6 +113,7 @@ function WindDisplay(props) {
           fill="white"
           stroke="black"
           strokeWidth={4}
+          className={styles.currentBearingContainer}
         />
         <text
           x={radius + 10}
