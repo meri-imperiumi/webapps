@@ -12,3 +12,7 @@
 .compassPoint {
   composes: display from "../shared/typography.css";
 }
+.currentBearing {
+  composes: body from "../shared/typography.css";
+  font-size: 21px;
+}
