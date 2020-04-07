@@ -1,6 +1,7 @@
 import React from 'react';
 import { withKnobs, number } from '@storybook/addon-knobs';
 import WindDisplay from './WindDisplay';
+import '../../.storybook/helpers';
 
 export default {
   title: 'Wind Display',

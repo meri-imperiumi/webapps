@@ -1,6 +1,7 @@
 import React from 'react';
 import { withKnobs, select, number } from '@storybook/addon-knobs';
 import DashboardValue from './DashboardValue';
+import '../../.storybook/helpers';
 
 export default {
   title: 'Dashboard value',
