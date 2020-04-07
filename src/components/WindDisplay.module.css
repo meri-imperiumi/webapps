@@ -14,5 +14,5 @@
 }
 .currentBearing {
   composes: body from "../shared/typography.css";
-  font-size: 21px;
+  font-size: 28px;
 }

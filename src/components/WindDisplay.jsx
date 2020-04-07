@@ -96,7 +96,7 @@ function WindDisplay(props) {
         />
         <text
           x={radius + 10}
-          y={32}
+          y={34}
           stroke="black"
           textAnchor="middle"
           className={styles.currentBearing}
