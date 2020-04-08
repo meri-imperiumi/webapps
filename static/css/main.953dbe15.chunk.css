@@ -2,12 +2,15 @@ body {
   --dashboard-background: #ffffff;
   --dashboard-text: #000000;
   --dashboard-outline: #121212;
+  --dashboard-outline-dim: #e0e0e0;
+  --dashboard-highlight: #ff4f00;
 }
 
 body.dark {
   --dashboard-background: #000000;
   --dashboard-text: #ffffff;
   --dashboard-outline: #e0e0e0;
+  --dashboard-outline-dim: #121212;
 }
 
 .colors_container__2jP9v {
@@ -23,9 +26,15 @@ body.dark {
 .colors_svgElement__2JoRh {
   stroke: var(--dashboard-outline);
 }
+.colors_dimSvgElement__1Gaiw {
+  stroke: var(--dashboard-outline-dim);
+}
 .colors_filledSvgElement__3M8Yz {
   stroke: var(--dashboard-outline);
   fill: var(--dashboard-background);
+}
+.colors_highlightSvgElement__261PQ {
+  stroke: var(--dashboard-highlight);
 }
 
 @font-face {
@@ -55,6 +64,8 @@ body.dark {
   max-width: 50vw;
   display: inline-block;
   padding: 7px;
+  padding-top: 14px;
+  position: relative;
 }
 
 .DashboardValue_label__1896J {
@@ -71,6 +82,17 @@ body.dark {
 .DashboardValue_unit__26iMj {
   margin: 0;
   padding: 0;
+}
+.DashboardValue_meter__kkUHI {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -40%);
+}
+
+.DashboardIndicator_indicator__-3gJv {
+}
+.DashboardIndicator_value__2Cny_ {
 }
 
 .WindDisplay_container__2v8Gq {
@@ -97,4 +119,4 @@ body.dark {
 }
 
 
-/*# sourceMappingURL=main.df20520a.chunk.css.map*/
+/*# sourceMappingURL=main.953dbe15.chunk.css.map*/
