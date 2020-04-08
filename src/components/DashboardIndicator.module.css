@@ -1,0 +1,6 @@
+.indicator {
+  composes: dimSvgElement from "../shared/colors.css";
+}
+.value {
+  composes: highlightSvgElement from "../shared/colors.css";
+}

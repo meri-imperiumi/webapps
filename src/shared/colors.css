@@ -2,12 +2,15 @@
   --dashboard-background: #ffffff;
   --dashboard-text: #000000;
   --dashboard-outline: #121212;
+  --dashboard-outline-dim: #e0e0e0;
+  --dashboard-highlight: #ff4f00;
 }
 
 :global body.dark {
   --dashboard-background: #000000;
   --dashboard-text: #ffffff;
   --dashboard-outline: #e0e0e0;
+  --dashboard-outline-dim: #121212;
 }
 
 .container {
@@ -23,7 +26,13 @@
 .svgElement {
   stroke: var(--dashboard-outline);
 }
+.dimSvgElement {
+  stroke: var(--dashboard-outline-dim);
+}
 .filledSvgElement {
   stroke: var(--dashboard-outline);
   fill: var(--dashboard-background);
+}
+.highlightSvgElement {
+  stroke: var(--dashboard-highlight);
 }

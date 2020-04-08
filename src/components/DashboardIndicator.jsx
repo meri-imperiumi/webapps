@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './DashboardIndicator.module.css';
 
 function DashboardIndicator(props) {
   const { radius, value, maxValue } = props;
@@ -11,6 +12,7 @@ function DashboardIndicator(props) {
   return (
     <svg width={radius * 2 + 10} height={radius * 2 + 10}>
       <circle
+        className={styles.indicator}
         cx={radius + 5}
         cy={radius + 5}
         r={radius}
@@ -22,6 +24,7 @@ function DashboardIndicator(props) {
         fill="transparent"
       />
       <circle
+        className={styles.value}
         cx={radius + 5}
         cy={radius + 5}
         r={radius}
