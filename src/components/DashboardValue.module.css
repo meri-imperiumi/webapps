@@ -8,6 +8,7 @@
   max-width: 50vw;
   display: inline-block;
   padding: 7px;
+  position: relative;
 }
 
 .label {
@@ -27,4 +28,10 @@
   composes: display from "../shared/typography.css";
   margin: 0;
   padding: 0;
+}
+.meter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
