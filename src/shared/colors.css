@@ -22,6 +22,14 @@
   stroke: var(--dashboard-text);
   fill: var(--dashboard-text);
 }
+.outlinedText {
+  color: var(--dashboard-text);
+  text-shadow:
+    -1px -1px 0 var(--dashboard-background),
+    1px -1px 0 var(--dashboard-background),
+    -1px 1px 0 var(--dashboard-background),
+    1px 1px 0 var(--dashboard-background);
+}
 
 .svgElement {
   stroke: var(--dashboard-outline);
