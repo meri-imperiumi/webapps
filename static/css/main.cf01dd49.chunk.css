@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'nasalization';
+  src: url(static/media/nasalization-rg.db842f76.woff) format('woff');
+}
+@font-face {
+  font-family: 'eurostile';
+  src: url(static/media/Eurostile.6864287b.woff) format('woff');
+}
+
+.typography_display__2Ats9 {
+  font-family: 'nasalization', helvetica, arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.typography_body__1uOdS {
+  font-family: 'eurostile', helvetica, arial, sans-serif;
+}
+
 body {
   --dashboard-background: #ffffff;
   --dashboard-text: #000000;
@@ -22,6 +40,14 @@ body.dark {
   stroke: var(--dashboard-text);
   fill: var(--dashboard-text);
 }
+.colors_outlinedText__9Y1vx {
+  color: var(--dashboard-text);
+  text-shadow:
+    -1px -1px 0 var(--dashboard-background),
+    1px -1px 0 var(--dashboard-background),
+    -1px 1px 0 var(--dashboard-background),
+    1px 1px 0 var(--dashboard-background);
+}
 
 .colors_svgElement__2JoRh {
   stroke: var(--dashboard-outline);
@@ -35,24 +61,6 @@ body.dark {
 }
 .colors_highlightSvgElement__261PQ {
   stroke: var(--dashboard-highlight);
-}
-
-@font-face {
-  font-family: 'nasalization';
-  src: url(static/media/nasalization-rg.db842f76.woff) format('woff');
-}
-@font-face {
-  font-family: 'eurostile';
-  src: url(static/media/Eurostile.6864287b.woff) format('woff');
-}
-
-.typography_display__2Ats9 {
-  font-family: 'nasalization', helvetica, arial, sans-serif;
-  text-transform: uppercase;
-}
-
-.typography_body__1uOdS {
-  font-family: 'eurostile', helvetica, arial, sans-serif;
 }
 
 .DashboardValue_card__1mn9c {
@@ -88,6 +96,7 @@ body.dark {
   left: 50%;
   top: 40%;
   transform: translate(-50%, -40%);
+  z-index: -1;
 }
 
 .DashboardIndicator_indicator__-3gJv {
@@ -119,4 +128,4 @@ body.dark {
 }
 
 
-/*# sourceMappingURL=main.953dbe15.chunk.css.map*/
+/*# sourceMappingURL=main.cf01dd49.chunk.css.map*/
