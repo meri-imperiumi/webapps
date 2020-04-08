@@ -9,6 +9,9 @@ function DashboardIndicator(props) {
   if (meterPosition > 0.8) {
     meterPosition = 0.8;
   }
+  if (meterPosition < 0) {
+    meterPosition = 0;
+  }
   return (
     <svg width={radius * 2 + 10} height={radius * 2 + 10}>
       <circle
